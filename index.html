@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Loan Calculator</title>
+
+    <style>
+        .signsWidth {
+          min-width:39px;
+        }
+
+        .fieldWidth {
+          min-width:150px;
+        }
+
+        #loading, #results {
+          display: none;
+        }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <!-- container in bootstrap moves everything to the middle, and adds some margin auto so it has margin on the sides -->
+      <div class="row">
+        <!-- a grid system -->
+        <div class="col-md-6 mx-auto">
+          <!-- a 6-column div, mx-auto is going to push it to the middle, it's gonna give it margin auto on the both sides, on the right and the left -->
+          <div class="card card-body text-center mt-5">
+              <!-- everything will be centered; mt-5 is gonna give it some margin on the top-->
+              <h1 class="heading display-5 pb-3">
+                <!--display-5 class makes it a certain size, pb-3 gives a padding on the bottom -->
+                Loan Calculator
+              </h1>
+              <form id="loan-form">
+                <div class="form-group">
+                  <!-- in bootstrap you want your inputs and labels wraped in a form-groups div -->
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                    <!-- for the money sign to be left of the actual input -->
+                    <!-- the signs class is mine and is for input-group-addon to get the same size -->
+                      <span class="input-group-text signsWidth">$</span>
+                    </div>
+                    <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                    <!-- form-control styles the bootstrap input, gives it some padding, makes it a block-level element -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text signsWidth">%</span>
+                    </div>
+                    <input type="number" class="form-control" id="interest" placeholder="Interest">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="years" placeholder="Years to Repay">
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+                  <!-- btn-dark makes the button a dark color, and btn-block makes it a block level button that goes all the way across -->
+                </div>
+              </form>
+              <!-- LOADER -->
+              <div id="loading">
+                <img src="img/loading.gif">
+              </div>
+              <!-- RESULTS -->
+              <div id="results" class="pt-4">
+                <!-- pt-4 gives some padding top -->
+                <h5>Results</h5>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text fieldWidth">Monthly Payment</span>
+                    </div>
+                    <input type="number" class="form-control" id="monthly-payment" disabled>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text fieldWidth">Total Payment</span>
+                    </div>
+                    <input type="number" class="form-control" id="total-payment" disabled>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text fieldWidth">Total Interest</span>
+                    </div>
+                    <input type="number" class="form-control" id="total-interest" disabled>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
